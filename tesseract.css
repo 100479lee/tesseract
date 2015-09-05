@@ -1,0 +1,250 @@
+/* Tesseract Web-based Presentation Framework 
+   created by Linus Lee, copyright 2015 */
+
+html,body,div,iframe,p,h1,h2,h3,img{display:block;margin:0;padding:0}h1,h2,h3{font-weight:normal}img{border:0}
+body{font-family:"Helvetica Neue","Arial",sans-serif}
+#presentation-container{
+    display:block;
+    height:100vh;
+    width:100%;
+    overflow:hidden;
+    position:absolute;
+    top:0;
+    left:0;
+}
+#presentation,.slide{
+    overflow:hidden;
+}
+#presentation{
+    transition:-webkit-transform 0.8s ease-out;
+    transition:-moz-transform 0.8s ease-out;
+    transition:-o-transform 0.8s;
+    transition:transform 0.8s;
+}
+.slide{
+    padding:3vh 4vw;
+    height:94vh;
+    width:92vw;
+    border-bottom:solid 1px #e0e0e0;
+}
+
+/* tesseract toolbar settings */
+#tesseract-toolbar{
+    display:block;
+    height:55px;
+    border-radius:15px;
+    transition:opacity 0.6s;
+    width:auto;
+    background-color:black;
+    opacity:0.55;
+    position:fixed;
+    right:60px;
+    bottom:50px;
+    cursor:pointer;
+    z-index:1;
+}
+#tesseract-toolbar.invis{
+    opacity:0;
+}
+#tesseract-toolbar.invis:hover{
+    opacity:0.55;
+}
+#tesseract-toolbar>img,#ss-setter>img,#ssn,#ss-setter{
+    float:left;
+}
+#tesseract-toolbar>img:active,#ss-setter>img:active{
+    opacity:0.6;
+}
+#sh-arrow{margin:20px 5px}
+#fs{margin:7px 8px;position:relative;z-index:2}
+#ps{margin:13px 8px;position:absolute;left:20px;opacity:0;z-index:1}
+#fs,#ps,#play,#pause{transition:opacity 0.2s}
+#ssl,#ssr{margin:16px 10px}
+#ssn{
+    text-align:center;
+    width:60px;
+    line-height:51px;
+    font-size:40px;
+    color:white;
+    display:block;
+    margin:0 5px;
+    font-weight:200;
+}
+#play{margin:14px 16px;position:absolute;left:200px;z-index:2}
+#pause{margin:14px 16px;opacity:0;position:relative;z-index:1}
+#sl,#sr,#picker{margin:13px 12px}
+#picker{font-family:"Helvetica Neue","Arial",sans-serif}
+#picker.off{
+    transform:rotate(180deg);
+    -webkit-transform:rotate(180deg);
+    -moz-transform:rotate(180deg);
+    -ms-transform:rotate(180deg);
+    -o-transform:rotate(180deg);
+}
+
+
+/* element type tags */
+.img,.txt,.yt,.html,.list,.slide>h1,h2,.bt{
+    display:block;
+    overflow:hidden;
+    box-sizing:border-box;
+    padding:15px;
+    margin:0;
+    width:100%;
+}
+.img,.txt,.yt,.html,.list{
+    float:left;
+    height:86%;
+    width:100%;
+    position:relative;
+}
+.txt,.yt,.html,.list{
+    overflow-y:auto;
+}
+.bt{
+    position:relative;
+    top:32%;
+}
+.bt>h1{
+    /* title settings */
+}
+.bt>h2{
+    margin-top:30px;
+    opacity:0.5;
+    font-weight:400;
+    padding:0;
+}
+/* centering vertically is problem for img, both for fill.img */
+.img.fill>img{
+    min-height:calc(100% - 30px);
+    min-width:calc(100% - 30px);
+    max-height:1000px;
+    max-width:10000px;
+}
+.img>img{
+    margin:auto;
+    max-width:calc(100% - 30px);
+    max-height:calc(100% - 30px);
+    position:absolute;
+    top:0;bottom:0;left:0;right:0;
+}
+.expand{
+    height:300px;
+}
+.txt,.list{
+    text-align:left;
+    line-height:1.4em;
+    font-size:4vh;
+}
+.yt>iframe{
+    margin:auto;
+}
+/*
+.html{
+
+}
+*/
+.list{
+    list-style-type:none;
+    line-height:2em;
+}
+.list>.list{
+    height:auto;
+}
+.bullet{
+    list-style-type:disc;
+}
+.numbered{
+    list-style-type:decimal;
+}
+.roman{
+    list-style-type:upper-roman;
+}
+.alpha{
+    list-style-type:upper-alpha;
+}
+h1{
+    font-size:8vh;
+    font-weight:bold;
+    height:14%;
+}
+h2{
+    font-size:4.5vh;
+    height:10%;
+    font-weight:bold;
+}
+.tR{text-align:right}
+.tL{text-align:left}
+.tC{text-align:center}
+
+/* layout tags */
+.noh,.x1,.x2,.x3,.x4,.x3-2,.x4-3{float:left}
+.noh{height:100%}
+.x1{width:100%}
+.x2{width:50%}
+.x3{width:33.33%}
+.x3-2{width:66.66%}
+.x4{width:25%}
+.x4-3{width:75%}
+
+/* element animation tags */
+
+/* animation tags are of the form a[D][T][F][A]
+   where D is the direction (T,R,B,L);
+   where T is the duration (3,5,10) (tenths of seconds);
+   where F is the fade selector (F,N) for fade or no fade in;
+   where A is an optional sync selector, where 'A' will be asynchronous (out of order) animate in. */
+
+/* styling presenter notes */
+.notes{display:none}
+@media only screen and (max-width:700px){
+    .notes{
+	display:block;
+	padding:3%;
+	width:94%;
+	background-color:#f0f0f0;
+	border-bottom:5px solid white;
+	border-top:2px solid #bbbbbb;
+	min-height:100vh;
+    }
+    .notes>h1,.notes>p,.notes>h2,.notes>h3{
+	margin:0 0 15px 0;
+	padding:0;
+	font-size:1em;
+    }
+    .notes>p{
+	margin-left:18px;
+    }
+    .notes>h2,.notes>h3{
+	margin-left:10px;
+    }
+    #tesseract-toolbar,.slide{
+	display:none;
+    }
+}
+#presets-header,#presets-animations{
+    display:none;
+}
+
+
+/* animatables data */
+/* right now, only fade is supported. More coming soon */
+.candid{
+    visibility:hidden;
+    opacity:0;
+}
+[class*=fade]{
+    visibility:initial;
+    opacity:1;
+    transition-property:opacity;
+}
+.fade03{
+    /* find a better way to get only end of the className */
+    transition-duration:0.3s;
+}
+.fade05{
+    transition-duration:0.5s;
+}
+.fade10{
+    transition-duration:1.0s;
+}

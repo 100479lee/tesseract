@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tesseract Platform Demo</title>
+    <link rel="stylesheet" type="text/css" href="tesseract.css"/>
+    <link rel="apple-touch-icon" href="logo.png">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  </head>
+  <body>
+    <div id="presets-header">
+      auto-play=off;
+      mini-controls=on;
+      invisible-controls=on;
+    </div>
+    <div id="presentation-container">
+      <div id="tesseract-toolbar">
+        <img id="sh-arrow" src="assets/sh-arrow.png"/>
+        <img id="fs" src="assets/fullscreen.png"/>
+        <img id="ps" src="assets/partscreen.png"/>
+        <div id="ss-setter">
+          <img id="ssl" src="assets/ssl.png"/>
+          <div id="ssn">15</div>
+          <img id="ssr" src="assets/ssr.png"/>
+        </div>
+        <img id="play" src="assets/play.png"/>
+        <img id="pause" src="assets/pause.png"/>
+        <img id="sl" src="assets/sl.png"/>
+        <img id="sr" src="assets/sr.png"/>
+        <img id="picker" class="on" src="assets/picker.png"/>
+      </div>
+        <div id="presentation">
+            <div class="slide">
+                <div class="bt">
+            <h1 class="tC">Tesseract Web Demo</h1>
+            <h2 class="tC">Beautiful Ideas, Stark Design.</h2>
+          </div>
+            </div>
+            <div class="notes">
+          <h1>Web-based Presentation/h1>
+            <p>Some notes</p>
+        </div>
+            <div class="slide">
+                <h1>Web-based Presentations</h1>
+                <div class="x3 txt">
+                    <h2>What?</h2>
+                    <p>Tesseract is a web-based presentation framework for CSS and JavaScript. Your presentations can be written in HTML and presented on any computer with a web browser. Simply type in the link to the presentation, and your slides are ready in seconds.</p>
+                </div>
+                <div class="x3 txt">
+                    <h2>Why?</h2>
+                    <p>Web-based presentations solve compatibility while being insanely easy to share, and with Tesseract's default templates, there's no basic design to worry about. That. Simple.</p>
+                </div>
+                <div class="x3 txt">
+                    <h2>How?</h2>
+                    <p>Tesseract has 2 components. The styles, managed by a single CSS stylesheet, and the presentation toolbar, managed by a single Javascript file. The slides are written in HTML.</p>
+                </div>
+            </div>
+            <div class="notes">
+          <p>Some more notes here</p>
+          <p>And some more notes about the prez here</p>
+        </div>
+            <div class="slide">
+                <h1>Adaptability, Versatility</h1>
+                <div class="img x2">
+            <!-- animatables have style as a combination of style picker and time selector -->
+            <img id="animatable" data-animation-style="fade03" data-animation-delay="0" src="logo-full.png"/>
+          </div>
+                <div class="txt x2">
+                    <p>While the default templates are easy to work with and cleanly designed, the possibilities of additional styling and customizations are endless and simple.</p>
+                    <p>Have a new nagivation feature to add? New fonts? Different backgrounds? Want to hide a slide quickly or delete a button from the toolbar? Your solutions are just a line of HTML markup away.</p>
+                </div>
+            </div>
+            <div class="slide">
+          <!-- no title on this slide -->
+          <div class="x3 noh">
+            <h2>By Default...</h2>
+            <div class="txt">
+              Default styles include styles for slides with titles and without, dividing the slide horizontally into halves, thirds, and fourths, headers and subheaders, code and video embeds (and, obviously, any other valid HTML embed works with some tweaking), links, images, backgrounds, enumerated, roman, and bulleted lists among others.
+            </div>
+          </div>
+          <div class="x3-2 noh txt">
+            <h2>The Toolbar</h2>
+            <p>The toolbar controls presentation nagivation, and supports...</p>
+            <div class="roman list">
+                <li>Going invisible and out of the way when not needed</li>
+                <li>Customizeable auto-play for a given time duration per slide</li>
+                <li>Mini-toolbar mode, with just back/forward arrows (handle on the left edge)</li>
+                <li>Full-screen support, with presentation filling the entire display, leaving no black bars or letterboxing.</li>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    <script src="tesseract.js"></script>
+  </body>
+</html>
