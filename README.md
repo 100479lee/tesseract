@@ -12,33 +12,32 @@ The same goes for document authoring -- everything from Microsoft Word to Google
 
 Tesseract is a family of semantic HTML markups that comprise a single presentationt to run inside a (currently webkit-only) browser. Briefly, an example presentation may look something like below. (DOM elements abbreviated).
 
-  #tesseract-toolbar
-    // elements inside the toolbar fall here
-
-  #presentation
-    .slide // single presentation slide
-      .bt // title slide block (headers appear vertically centered)
-        h1.tC // Presentation title
-        h2.tC // Presentation subtitle
-    .slide 
-      .h1 // slide title
-      .txt // text box filling the rest of the slide
-    .slide
-      .txt .noh // text box without margin up top for title
-    .slide
-      .h1
-      .txt .x2 // text box filling 1/2 of the slide horizontally
-      .txt .x2
-    .slide
-      .h1
-      .txt .x3 // text box filling 1/3 of the slide (1/4 also possible with .x4
-      .txt .x3-2 // fills 2/3 or about 66.7% of the slide horizontally
-    .slide 
-      .h1
-      .txt
-        h2 // subtitles may be added
-        .li // list with no headers
-            // headers may be .bullet, .roman, .numbered (arabic), or .alpha
+    #tesseract-toolbar
+      // elements inside the toolbar fall here
+    #presentation
+      .slide // single presentation slide
+        .bt // title slide block (headers appear vertically centered)
+          h1.tC // Presentation title
+          h2.tC // Presentation subtitle
+      .slide 
+        .h1 // slide title
+        .txt // text box filling the rest of the slide
+      .slide
+        .txt .noh // text box without margin up top for title
+      .slide
+        .h1
+        .txt .x2 // text box filling 1/2 of the slide horizontally
+        .txt .x2
+      .slide
+        .h1
+        .txt .x3 // text box filling 1/3 of the slide (1/4 also possible with .x4
+        .txt .x3-2 // fills 2/3 or about 66.7% of the slide horizontally
+      .slide 
+        .h1
+        .txt
+          h2 // subtitles may be added
+            .li // list with no headers
+                // headers may be .bullet, .roman, .numbered (arabic), or .alpha
 
 
 For more information and samples, please refer to __demo.html__.
